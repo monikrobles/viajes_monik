@@ -1,0 +1,22 @@
+﻿@{
+    Page.Title = "Confirmación de la Orden!";
+    var emailNotSetUp = Request["NoEmail"] != null;
+}
+<ol id="orderProcess">
+    <li><span class="step-number">1</span>Seleccione el Tour</li>
+    <li><span class="step-number">2</span>Detalles &amp; Aceptar</li>
+    <li class="current"><span class="step-number">3</span>Factura</li>
+</ol>
+<h1>Confirmación de la Orden</h1>
+
+@if (emailNotSetUp) {
+    <div class="message info">
+        <h2>Configure su correo!</h2>
+        <p>Guarde su usuario y contraseña de Hotmail en la página Order.cshtml para poder enviar correos</p>
+    </div>
+} else {
+    <div class="message order-success">
+        <h2>Gracias por su compra!</h2>
+        <p>Estamos procesando su orden y le enviaremos un email de confirmación. Gracias por Comprar en Viajes Monik y disfrute su Tour!</p>
+    </div>
+}
